@@ -9,7 +9,7 @@ export const config = {
   },
 };
 
-export default async function handler(req, res) {
+export default async function Register(req, res) {
   connectDB()
   const form = new multiparty.Form();
   const data = await new Promise((resolve, reject) => {
@@ -42,3 +42,4 @@ export default async function handler(req, res) {
 
   
 }
+

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Link from 'next/link';
 function MyForm() {
 
     const [image, setImage] = useState(null);
@@ -39,7 +40,6 @@ function MyForm() {
       fetch('api/reguser/route', {
         method: 'POST',
         body: formData
-
       })
         .then((response) => {
           // Manejar la respuesta aquí
@@ -54,9 +54,7 @@ function MyForm() {
         });
     };
   
-    const handlePasswordMatch = () => {
 
-    };
 
   return (
     <div className="relative flex justify-center items-center h-screen">
@@ -136,11 +134,11 @@ function MyForm() {
             </label>
           </div>
           <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition">
-            Iniciar sesión
+            Registrate
           </button>
         </form>
         <p className="mt-4">
-          ¿No tienes cuenta? <a href="#" className="text-black hover:underline">Regístrate</a>
+          ¿Ya tienes cuenta? <Link href="/" className="text-black hover:underline">Log In</Link>
         </p>
       </div>
     </div>
