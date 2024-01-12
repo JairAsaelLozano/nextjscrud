@@ -29,3 +29,7 @@ body {
     rgb(var(--background-start-rgb)); */
 }
 
+.hover-img:hover img {
+  filter: grayscale(0); /* Hace que la imagen sea a color al hacer hover sobre el contenedor */
+}
+
