@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Link from 'next/link';
-
+import { useRouter } from 'next/navigation';
 function MyForm() {
   const [username, setUserame] = useState("");
   const [password, setPassword] = useState("");
+  const { push } = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-  
     // Realizar la solicitud POST
      await fetch('api/Login/route', {
       method: 'POST',
@@ -26,7 +26,10 @@ function MyForm() {
         }
       })
       .then((data) => {
-        console.log(data);
+        if(data.success){
+          console.log(data.success)
+          push('dashboard/')
+        };
       })
       .catch((error) => {
        
